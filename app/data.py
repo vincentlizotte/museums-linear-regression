@@ -11,9 +11,9 @@ def get_data_csv():
 
     with io.StringIO() as output:
         writer = csv.writer(output, delimiter=',')
-        writer.writerow(["museum_name", "visitors_per_year", "city_name", "population"])
+        writer.writerow(["museum_name", "visitors_per_year", "city_name", "country_name", "population"])
         for museum in museums:
-            writer.writerow([museum.name, museum.visitors_per_year, museum.city.name, museum.city.population])
+            writer.writerow([museum.name, museum.visitors_per_year, museum.city.name, museum.city.country_name, museum.city.population])
         output.seek(0)
         result = output.read()
 
